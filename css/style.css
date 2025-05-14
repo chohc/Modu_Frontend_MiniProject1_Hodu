@@ -1,12 +1,12 @@
 @import url(./font.css);
 
 :root {
-  --bg-color: #5b2386;
-  --yellow-text: #f5df4d;
-  --main-text: #fff;
-  --gray-text: #babcbe;
-  --yellow-button: #fcee21;
-  --yellow-button-hover: #e9da14;
+  --bg-color: #f2e9d8;
+  --orange: #d97652;
+  --main-text: #000000;
+  --sub-color: #ffffff;
+  --placeholder-color: #767676;
+  --orange-hover: #dd5a2b;
 }
 
 .sr-only {
@@ -19,4 +19,142 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+body {
+  font-family: "SpoqaHanSansNeo", sans-serif;
+  color: var(--main-text);
+  background-color: var(--bg-color);
+  font-weight: 400;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button,
+.btn-link {
+  display: inline-block;
+  padding: 0.94rem 1.81rem;
+  flex-shrink: 0;
+
+  border-radius: 2.5rem;
+  background: var(--orange);
+
+  color: var(--sub-color);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+button:hover,
+.btn-link:hover {
+  background-color: var(--orange-hover);
+}
+
+li {
+  display: inline-block;
+}
+
+/* header */
+header {
+  width: 100%;
+  height: 6.375rem;
+  background-color: var(--bg-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: sticky;
+  top: 0;
+}
+
+header > div {
+  max-width: 1320px;
+  width: 100%;
+  padding: 0 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 > a {
+  display: inline-block;
+  width: 8.125rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+header h1 > a:hover {
+  transform: scale(1.1);
+}
+
+header li:not(:last-child) > a {
+  font-size: 1rem;
+  font-weight: 400;
+
+  margin-left: 1.88rem;
+}
+
+header li:not(:last-child) > a:hover {
+  color: var(--orange-hover);
+}
+
+header li:last-child {
+  margin-left: 2.5rem;
+}
+
+/* main */
+
+main {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  max-width: 1320px;
+  width: 100%;
+  padding: 0 1.25rem;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* section1 */
+
+.wrapper1 {
+  height: 49.87rem;
+  padding-top: 10.4vw;
+  background: url(../image/img_cat_png.png) no-repeat;
+  /* background-size: 415px 890px; */
+  background-size: 31.4% auto;
+  background-position: right 2rem bottom;
+}
+
+.wrapper1 > div {
+  width: 57%;
+}
+
+.wrapper1 p {
+  margin-bottom: 2.5rem;
+}
+
+/* section2 */
+
+.wrapper2 {
+  background-color: var(--sub-color);
 }

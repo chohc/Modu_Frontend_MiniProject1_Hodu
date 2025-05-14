@@ -9,13 +9,16 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: sans-serif;
-  line-height: 1.5;
+  line-height: 1.25;
   color: #000;
   background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -56,9 +59,10 @@ fieldset {
 input {
   margin: 0;
   padding: 0;
+  border: none;
 }
 
 *:focus-visible {
-  outline: 5px solid #d97652;
+  outline: 5px solid #dd5a2b;
   outline-offset: 3px;
 }
