@@ -9,7 +9,6 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -17,13 +16,12 @@ body {
   line-height: 1.5;
   color: #000;
   background-color: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 ul,
@@ -56,12 +54,11 @@ fieldset {
 }
 
 input {
-  border: none;
   margin: 0;
   padding: 0;
 }
 
-:focus-visible {
-  border: 2px solid black;
-  outline-offset: 2px;
+*:focus-visible {
+  outline: 5px solid #d97652;
+  outline-offset: 3px;
 }

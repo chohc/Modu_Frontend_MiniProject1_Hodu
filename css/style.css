@@ -1,0 +1,22 @@
+@import url(./font.css);
+
+:root {
+  --bg-color: #5b2386;
+  --yellow-text: #f5df4d;
+  --main-text: #fff;
+  --gray-text: #babcbe;
+  --yellow-button: #fcee21;
+  --yellow-button-hover: #e9da14;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
