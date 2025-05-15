@@ -78,6 +78,7 @@
             <a href="#" class="btn-link">Learn More</a>
           </div>
           <div>
+            <!-- subscribe -->
             <article>
               <div>
                 <h3>Subscribe to our Blog post</h3>
@@ -97,13 +98,15 @@
                     placeholder="Enter your e-mail address"
                   />
                 </div>
-                <button type="submit">Subscribe</button>
+                <button type="submit" id="showModalBtn">Subscribe</button>
               </form>
             </article>
           </div>
         </div>
       </section>
+      <!-- bottom background cat -->
       <div class="bg-cat"></div>
+      <!-- top button -->
       <a href="#" class="top-btn"
         ><span class="sr-only">맨 위로 이동</span
         ><svg
@@ -158,13 +161,24 @@
             </li>
           </ul>
         </nav>
-        <audio
-          class="hover-audio"
-          src="./image/cat-meow.mp3"
-          preload="auto"
-        ></audio>
       </div>
     </footer>
+
+    <!-- subscribe modal -->
+    <div id="modal" class="modal-bg" role="dialog" aria-hidden="true">
+      <div class="modal">
+        <img src="./image/modal/cat.png" alt="호두 얼굴" class="hover-target" />
+        <p>Thank you!</p>
+        <span>Lorem Ipsum is simply dummy text of the printing industry.</span>
+        <a id="closeBtn" class="btn-link">OK! I Love HODU</a>
+      </div>
+    </div>
+    <audio
+      class="hover-audio"
+      src="./image/cat-meow.mp3"
+      preload="auto"
+    ></audio>
+
     <script>
       const audio = document.querySelector(".hover-audio");
       const hoverTargets = document.querySelectorAll(".hover-target");
@@ -178,6 +192,22 @@
           audio.pause();
           audio.currentTime = 0;
         });
+      });
+
+      // modal
+      const modal = document.getElementById("modal");
+      const showDialogBtn = document.getElementById("showModalBtn");
+      const closeBtn = document.getElementById("closeBtn");
+
+      showDialogBtn.addEventListener("click", () => {
+        event.preventDefault();
+        document.getElementById("modal").setAttribute("aria-hidden", "false");
+        document.getElementById("modal").style.display = "flex";
+      });
+
+      closeBtn.addEventListener("click", () => {
+        document.getElementById("modal").setAttribute("aria-hidden", "true");
+        document.getElementById("modal").style.display = "none";
       });
     </script>
   </body>

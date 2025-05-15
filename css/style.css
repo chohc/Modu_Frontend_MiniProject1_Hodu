@@ -31,6 +31,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  overscroll-behavior: none;
 }
 
 button,
@@ -387,6 +389,85 @@ input::placeholder {
 
 .top-btn:hover svg path {
   fill: var(--placeholder-color);
+}
+
+/* modal */
+@keyframes move-hodu {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(20deg);
+  }
+  40% {
+    transform: rotate(-20deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.modal-bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1.25rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  z-index: 9999;
+}
+
+.modal-bg[aria-hidden="true"] {
+  display: none;
+}
+
+.modal {
+  width: min(600px, 80%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.75rem 0 2.5rem;
+
+  background: url(../image/modal/modal-bg-pc.png) no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+}
+
+.modal > img {
+  width: 18.3%;
+  aspect-ratio: 110/112;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.modal > img:hover {
+  animation: move-hodu 1s ease-out;
+}
+
+.modal > p {
+  font-size: 2.25rem;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.modal > span {
+  max-width: 393px;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-bottom: 2.375rem;
 }
 
 /* footer */
