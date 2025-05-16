@@ -22,6 +22,14 @@
   border: 0;
 }
 
+.mobile-only {
+  display: none;
+}
+
+.pc-only {
+  display: block;
+}
+
 body {
   font-family: "SpoqaHanSansNeo", sans-serif;
   color: var(--main-text);
@@ -62,8 +70,8 @@ li {
 /* header */
 header {
   width: 100%;
-  height: 6.375rem;
-  background-color: rgba(242, 233, 216, 0.9);
+  padding: 1.6rem 0;
+  background-color: rgba(242, 233, 216, 0.8);
   backdrop-filter: blur(10px);
 
   display: flex;
@@ -87,13 +95,14 @@ footer > div {
 
 header h1 > a {
   display: inline-block;
-  width: 8.125rem;
-  height: 2.5rem;
+  width: 130px;
+  height: 40px;
   flex-shrink: 0;
   transition: transform 0.2s;
 }
 
-header h1 > a:hover {
+header h1 > a:hover,
+header h1 > a:active {
   transform: scale(1.1);
 }
 
@@ -124,7 +133,6 @@ main {
 section,
 footer {
   width: 100%;
-
   display: flex;
   justify-content: center;
 }
@@ -424,7 +432,7 @@ input::placeholder {
   align-items: center;
 
   position: fixed;
-  z-index: 9999;
+  z-index: 2000;
 }
 
 .modal-bg[aria-hidden="true"] {
@@ -518,5 +526,91 @@ footer nav li > a > img {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+  }
+
+  .wrapper__img-group {
+    gap: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .mobile-only {
+    display: block;
+  }
+
+  .pc-only {
+    display: none;
+  }
+
+  /* header */
+
+  header {
+    padding: 0.9rem 0;
+  }
+
+  header > div,
+  footer > div {
+    padding: 0 1.25rem;
+  }
+
+  header button.mobile-only,
+  .sidebar button.exit {
+    all: unset;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    width: 32px;
+    height: 32px;
+  }
+
+  header button.mobile-only:active svg path,
+  .sidebar button.exit:active svg path {
+    stroke: var(--orange);
+  }
+
+  header h1 > a {
+    width: 92px;
+    height: 28px;
+  }
+
+  /* sidebar */
+
+  .sidebar {
+    width: 74%;
+    height: 100vh;
+    background-color: var(--article-bg);
+    padding: 1.25rem 1.375rem;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2000;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebar ul {
+    padding: 4.125rem 1.875rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .sidebar li:not(:last-child) > a {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .sidebar li:last-child {
+    padding-top: 1.25rem;
+
+    transform: translateX(-10px);
   }
 }

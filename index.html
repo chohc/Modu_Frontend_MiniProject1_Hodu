@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="고양이, 호두, 소개" />
     <title>호두</title>
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="./image/modal/cat.png" />
   </head>
   <body>
     <header>
@@ -13,7 +15,78 @@
         <h1>
           <a href="#"><img src="./image/Logo-fin.svg" alt="Hodu" /></a>
         </h1>
-        <nav>
+        <nav class="pc-only">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#" class="btn-link">Download</a></li>
+          </ul>
+        </nav>
+        <button class="mobile-only">
+          <span class="sr-only">메뉴 열기</span>
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 16H28"
+              stroke="#263140"
+              stroke-width="2"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M4 8H28"
+              stroke="#263140"
+              stroke-width="2"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M4 24H28"
+              stroke="#263140"
+              stroke-width="2"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main>
+      <!-- (mobile-only) sidebar -->
+      <div class="mobile-only sidebar-bg">
+        <nav class="mobile-only sidebar">
+          <button class="exit">
+            <span class="sr-only">메뉴 닫기</span
+            ><svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.66675 16L22.6667 16"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M15.9999 25.3333L25.3333 16L15.9999 6.66667"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -22,8 +95,8 @@
           </ul>
         </nav>
       </div>
-    </header>
-    <main>
+
+      <!-- section1 -->
       <section class="wrapper1">
         <div>
           <h2>Lorem Ipsum is simply<br />dummy text of the printing and</h2>
@@ -35,6 +108,7 @@
           <a href="#" class="btn-link">Download</a>
         </div>
       </section>
+      <!-- section2 -->
       <section class="wrapper2">
         <div>
           <div class="wrapper__img-text">
@@ -173,6 +247,8 @@
         <a id="closeBtn" class="btn-link">OK! I Love HODU</a>
       </div>
     </div>
+
+    <!-- cat sound(easter egg) -->
     <audio
       class="hover-audio"
       src="./image/cat-meow.mp3"
@@ -180,6 +256,7 @@
     ></audio>
 
     <script>
+      // sound
       const audio = document.querySelector(".hover-audio");
       const hoverTargets = document.querySelectorAll(".hover-target");
 
@@ -208,6 +285,19 @@
       closeBtn.addEventListener("click", () => {
         document.getElementById("modal").setAttribute("aria-hidden", "true");
         document.getElementById("modal").style.display = "none";
+      });
+
+      // sidebar
+      const menuButton = document.querySelector("header button.mobile-only");
+      const sidebar = document.querySelector("nav.sidebar");
+      const exitButton = document.querySelector(".sidebar .exit");
+
+      menuButton.addEventListener("click", () => {
+        sidebar.classList.add("active");
+      });
+
+      exitButton.addEventListener("click", () => {
+        sidebar.classList.remove("active");
       });
     </script>
   </body>
