@@ -10,11 +10,13 @@
     <link rel="icon" href="./image/modal/cat.png" />
   </head>
   <body>
+    <!-- header -->
     <header>
       <div>
         <h1>
           <a href="#"><img src="./image/Logo-fin.svg" alt="Hodu" /></a>
         </h1>
+        <!-- pc -->
         <nav class="pc-only">
           <ul>
             <li><a href="#">Home</a></li>
@@ -23,6 +25,7 @@
             <li><a href="#" class="btn-link">Download</a></li>
           </ul>
         </nav>
+        <!-- mobile -->
         <button class="mobile-only">
           <span class="sr-only">메뉴 열기</span>
           <svg
@@ -57,6 +60,7 @@
         </button>
       </div>
     </header>
+    <!-- main -->
     <main>
       <!-- (mobile-only) sidebar -->
       <div class="mobile-only sidebar-bg">
@@ -99,7 +103,10 @@
       <!-- section1 -->
       <section class="wrapper1">
         <div>
-          <h2>Lorem Ipsum is simply<br />dummy text of the printing and</h2>
+          <h2>
+            Lorem Ipsum is simply<br />dummy text<br class="mobile-only" />of
+            the printing and
+          </h2>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.<br />Lorem Ipsum has been the industry's standard dummy
@@ -181,7 +188,7 @@
       <!-- bottom background cat -->
       <div class="bg-cat"></div>
       <!-- top button -->
-      <a href="#" class="top-btn"
+      <a href="#" class="pc-only top-btn"
         ><span class="sr-only">맨 위로 이동</span
         ><svg
           width="40"

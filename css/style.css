@@ -251,7 +251,7 @@ p {
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4.5rem;
+  gap: 72px;
   overflow-y: scroll;
 
   /* scroll 숨김 */
@@ -264,10 +264,10 @@ p {
 }
 
 .wrapper__img-group img {
-  min-width: 18rem;
+  min-width: 16.25rem;
   width: 100%;
   height: auto;
-  border-radius: 1.875rem;
+  border-radius: 30px;
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.25);
 
   transition: transform 0.1s;
@@ -295,12 +295,11 @@ article {
   width: min(calc(100% - 4rem), 1280px);
   padding: 3.12rem 3.63rem;
   background-color: var(--article-bg);
-  border-radius: 1.875rem;
+  border-radius: 30px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 6rem;
 
   position: absolute;
   left: 50%;
@@ -328,10 +327,9 @@ article > form {
   gap: 1rem;
 
   width: 33.125rem;
-  height: 3.75rem;
   padding: 0.31rem;
   padding-left: 1.75rem;
-  border-radius: 3.75rem;
+  border-radius: 60px;
   background-color: var(--sub-color);
 }
 
@@ -348,6 +346,7 @@ article > form {
   height: 1.5rem;
   flex-shrink: 0;
   background: url(../image/mail.svg) no-repeat;
+  background-size: contain;
 
   position: absolute;
   top: 50%;
@@ -357,6 +356,7 @@ article > form {
 
 .wrapper__email > input {
   width: 100%;
+  margin-bottom: 3px;
 }
 
 input::placeholder {
@@ -481,13 +481,12 @@ input::placeholder {
 /* footer */
 footer {
   padding: 2.81rem 0;
-  align-items: center;
   background-color: var(--sub-color);
 }
 
 footer > div > img {
   width: 14.125rem;
-  height: 4.375rem;
+  height: auto;
 }
 
 footer nav ul {
@@ -529,7 +528,7 @@ footer nav li > a > img {
   }
 
   .wrapper__img-group {
-    gap: 2.4rem;
+    gap: 38px;
   }
 }
 
@@ -540,6 +539,12 @@ footer nav li > a > img {
 
   .pc-only {
     display: none;
+  }
+
+  button,
+  .btn-link {
+    padding: 0.687rem 1.5rem;
+    font-size: 0.875rem;
   }
 
   /* header */
@@ -564,12 +569,18 @@ footer nav li > a > img {
     height: 32px;
   }
 
+  header button.mobile-only:focus-visible,
+  .sidebar button.exit:focus-visible {
+    outline: 5px solid #dd5a2b;
+    outline-offset: 3px;
+  }
+
   header button.mobile-only:active svg path,
   .sidebar button.exit:active svg path {
     stroke: var(--orange);
   }
 
-  header h1 > a {
+  header h1 img {
     width: 92px;
     height: 28px;
   }
@@ -612,5 +623,197 @@ footer nav li > a > img {
     padding-top: 1.25rem;
 
     transform: translateX(-10px);
+  }
+
+  /* main */
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.875rem;
+    text-align: center;
+  }
+
+  /* section1 */
+
+  .wrapper1 > div {
+    height: 44.875rem;
+    padding-top: 10.25vw;
+    background-size: auto 50.4%;
+    background-position: center bottom;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wrapper1 h2 {
+    width: 16.5rem;
+    text-align: center;
+  }
+
+  .wrapper1 p {
+    width: 18rem;
+    font-size: 0.875rem;
+    text-align: center;
+    margin-bottom: 1.875rem;
+  }
+
+  /* section2 */
+
+  .wrapper2 {
+    padding-top: 2.5rem;
+    padding-bottom: 20.625rem;
+  }
+
+  .wrapper2 > div > div {
+    padding: 0 2rem;
+  }
+
+  .wrapper__img-text {
+    flex-direction: column;
+    margin-bottom: 3.75rem;
+  }
+
+  .wrapper__img-text > img {
+    width: 100%;
+
+    border-radius: 18px;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+
+    margin-bottom: 2.5rem;
+  }
+
+  .wrapper__img-text > div {
+    width: 100%;
+  }
+
+  .wrapper__img-text p {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .wrapper__img-text span {
+    font-size: 0.875rem;
+  }
+
+  .wrapper__img-group {
+    width: 100%;
+    padding: 2.5rem 2rem 3.75rem;
+    gap: 20px;
+  }
+
+  .wrapper__img-group img {
+    border-radius: 18px;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .wrapper__text-btn {
+    padding-bottom: 4.375rem !important;
+    position: relative;
+  }
+
+  .wrapper__text-btn > a {
+    position: absolute;
+    right: 2rem;
+    bottom: 0;
+  }
+
+  /* subscribe */
+
+  article {
+    padding: 2.25rem 2rem 5.625rem;
+    border-radius: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transform: translate(-50%, 20%);
+  }
+
+  article h3 {
+    width: 80%;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  article p {
+    max-width: 491px;
+    color: var(--bg-color);
+    font-size: 0.875rem;
+  }
+
+  article > form {
+    width: 100%;
+    padding: 0.6rem 1rem;
+
+    /* form button 기준 위치 */
+    position: relative;
+  }
+
+  .wrapper__email {
+    padding-left: 2rem;
+  }
+
+  .wrapper__email::before {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .wrapper__email > input {
+    font-size: 0.75rem;
+  }
+
+  article form > button {
+    position: absolute;
+    right: 0;
+    bottom: -1.25rem;
+    transform: translateY(100%);
+  }
+
+  /* cat bg */
+  .bg-cat {
+    height: 240px;
+  }
+
+  /* modal */
+
+  /* footer */
+  footer {
+    padding: 1.875rem 1, 25rem 1.5rem;
+  }
+
+  footer > div > img {
+    width: 7rem;
+  }
+
+  /* 여기서 부터 수정필요!! */
+
+  footer nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  footer nav li > a {
+    width: 2.625rem;
+    height: 2.625rem;
+    flex-shrink: 0;
+    background-color: var(--orange);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer nav li > a:hover {
+    background-color: var(--orange-hover);
+  }
+
+  footer nav li > a > img {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
   }
 }
