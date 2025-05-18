@@ -10,7 +10,6 @@
     <link rel="icon" href="./image/modal/cat.png" />
   </head>
   <body>
-    <!-- header -->
     <header>
       <div>
         <h1>
@@ -60,7 +59,6 @@
         </button>
       </div>
     </header>
-    <!-- main -->
     <main>
       <!-- (mobile-only) sidebar -->
       <div class="mobile-only sidebar-bg">
@@ -100,7 +98,6 @@
         </nav>
       </div>
 
-      <!-- section1 -->
       <section class="wrapper1">
         <div>
           <h2>
@@ -115,7 +112,7 @@
           <a href="#" class="btn-link">Download</a>
         </div>
       </section>
-      <!-- section2 -->
+
       <section class="wrapper2">
         <div>
           <div class="wrapper__img-text">
@@ -211,6 +208,7 @@
         </svg>
       </a>
     </main>
+
     <footer>
       <div>
         <img src="./image/Logo-fin.svg" alt="Hodu" />
@@ -255,15 +253,18 @@
       </div>
     </footer>
 
-    <!-- subscribe modal -->
-    <div id="modal" class="modal-bg" role="dialog" aria-hidden="true">
-      <div class="modal">
-        <img src="./image/modal/cat.png" alt="호두 얼굴" class="hover-target" />
+    <dialog id="modal" class="modal">
+      <div class="modal-content">
+        <img
+          src="./image/modal/cat.png"
+          alt="호두 얼굴"
+          class="hover-target hodu-face"
+        />
         <p>Thank you!</p>
         <span>Lorem Ipsum is simply dummy text of the printing industry.</span>
-        <a id="closeBtn" class="btn-link">OK! I Love HODU</a>
+        <button id="closeBtn">OK! I Love HODU</button>
       </div>
-    </div>
+    </dialog>
 
     <!-- cat sound(easter egg) -->
     <audio
@@ -278,13 +279,14 @@
       const hoverTargets = document.querySelectorAll(".hover-target");
 
       hoverTargets.forEach((target) => {
-        target.addEventListener("mouseover", () => {
-          audio.play();
-        });
-
-        target.addEventListener("mouseout", () => {
-          audio.pause();
+        target.addEventListener("click", () => {
           audio.currentTime = 0;
+          audio.play();
+
+          setTimeout(() => {
+            audio.pause();
+            audio.currentTime = 0;
+          }, 1000);
         });
       });
 
@@ -292,16 +294,27 @@
       const modal = document.getElementById("modal");
       const showDialogBtn = document.getElementById("showModalBtn");
       const closeBtn = document.getElementById("closeBtn");
+      const hoduImg = document.querySelector(".hodu-face");
 
       showDialogBtn.addEventListener("click", () => {
         event.preventDefault();
-        document.getElementById("modal").setAttribute("aria-hidden", "false");
-        document.getElementById("modal").style.display = "flex";
+        modal.showModal();
       });
 
       closeBtn.addEventListener("click", () => {
-        document.getElementById("modal").setAttribute("aria-hidden", "true");
-        document.getElementById("modal").style.display = "none";
+        modal.close();
+        hoduImg.classList.remove("animate");
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.close();
+          hoduImg.classList.remove("animate");
+        }
+      });
+
+      hoduImg.addEventListener("click", () => {
+        hoduImg.classList.add("animate");
       });
 
       // sidebar
