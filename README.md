@@ -46,7 +46,7 @@ Modu_Frontend_MiniProject1_Hodu/
 
 
 ### 시멘틱 HTML 구조
-- <header>, <main>, <section>, <article>, <dialog>, <footer> 등 시맨틱 태그로 의미 전달
+- 시맨틱 태그로 의미 전달
 
 
 ### CSS 스타일링
@@ -60,8 +60,5 @@ Modu_Frontend_MiniProject1_Hodu/
 ### 추가 요소
 - 고양이 클릭 시 사운드 추가
 - 모달 고양이 클릭 시 간단한 애니메이션 효과
-- ![image](https://github.com/user-attachments/assets/c700b7a1-b4d2-46fa-a369-8eecaf822ead)
-- ![image](https://github.com/user-attachments/assets/d0c5bc81-58db-4462-953d-aeec15740b57)
-
 
 
