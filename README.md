@@ -1,4 +1,4 @@
-# Hodu
+![image](https://github.com/user-attachments/assets/ac08ed16-4612-490e-b5f8-0f4525c98957)# Hodu
 고양이 호두를 소개하는 반응형 웹페이지입니다.
 모두의연구소 오름캠프 프론트엔드 미니프로젝트1로 진행하였습니다.
 
@@ -32,10 +32,13 @@ Modu_Frontend_MiniProject1_Hodu/
 ## 700px - 1100px
 - ![image](https://github.com/user-attachments/assets/401d1c6f-053b-402a-986d-e631ea72be46)
 - ![image](https://github.com/user-attachments/assets/f8535c55-9b94-4b1b-b96c-9cc35b8aea09)
+- ![image](https://github.com/user-attachments/assets/15c2cb99-f30a-4b29-b455-9e4b417078ac)
+
 
 ## - 700px
 - ![image](https://github.com/user-attachments/assets/277824c5-af74-4bfa-8489-73355568ee8a)
 - ![image](https://github.com/user-attachments/assets/86c16533-17ad-4132-b290-dd5daca52669)
+- ![image](https://github.com/user-attachments/assets/8bad9ca9-c4e8-4956-ad3a-6a41d1e0ad9f)
 
 
 ### 시멘틱 HTML 구조
